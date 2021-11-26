@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv')
+dotenv.config()
 const dbConnection = async() => {
 
     try {
 
-        await mongoose.connect('mongodb+srv://user_api:awDKstgdMaZBp9qv@apicluster.0rim0.mongodb.net/api');
+        await mongoose.connect(process.env.MONGO);
         console.log('BASE DE DATOS ONLINE')
         
 
